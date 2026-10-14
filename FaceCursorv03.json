@@ -1,0 +1,731 @@
+{
+  "author": "",
+  "category": "Movement",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "FaceCursor",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWN1cnNvci1kZWZhdWx0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEzLjY0LDIxLjk3QzEzLjE0LDIyLjIxIDEyLjU0LDIyIDEyLjMxLDIxLjVMMTAuMTMsMTYuNzZMNy42MiwxOC43OEM3LjQ1LDE4LjkyIDcuMjQsMTkgNywxOUExLDEgMCAwLDEgNiwxOFYzQTEsMSAwIDAsMSA3LDJDNy4yNCwyIDcuNDcsMi4wOSA3LjY0LDIuMjNMNy42NSwyLjIyTDE5LjE0LDExLjg2QzE5LjU3LDEyLjIyIDE5LjYyLDEyLjg1IDE5LjI3LDEzLjI3QzE5LjEyLDEzLjQ1IDE4LjkxLDEzLjU3IDE4LjcsMTMuNjFMMTUuNTQsMTQuMjNMMTcuNzQsMTguOTZDMTgsMTkuNDYgMTcuNzYsMjAuMDUgMTcuMjYsMjAuMjhMMTMuNjQsMjEuOTdaIiAvPjwvc3ZnPg==",
+  "name": "FaceCursor",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/c7960cb36433fb81a170648354dbf9d956b2a1570792f37d4a3c2fd37c3f17a5_cursor-default.svg",
+  "shortDescription": "Makes your character face Cursor.",
+  "version": "0.3",
+  "description": [
+    "Makes your character face Cursor. Right sided characters recommended.",
+    "",
+    "",
+    "-Made By FaalenGames",
+    ""
+  ],
+  "tags": [
+    "face",
+    "look cursor",
+    "follow cursor",
+    "face cursor",
+    "cursor"
+  ],
+  "authorIds": [],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [
+    {
+      "name": "originalWidth",
+      "type": "number",
+      "value": 0
+    }
+  ],
+  "eventsFunctions": [],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "eventsBasedBehaviors": [
+    {
+      "description": "",
+      "fullName": "",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "FaceCursor",
+      "objectType": "Sprite",
+      "previewIconUrl": "",
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneJustBegins"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "originalWidth",
+                    "=",
+                    "Object.Width()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "IsYourCharacterLooksRight",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "FlippingEffect",
+                        "True",
+                        "<"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "originalWidth",
+                            "=",
+                            "Object.Width()"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "<",
+                            "CursorX()"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Tween::TweenBehavior::AddObjectWidthTween2"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Tween",
+                            "\"toright\"",
+                            "Object.Width()/2",
+                            "\"linear\"",
+                            "FlipEffectSpeed",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Wait"
+                          },
+                          "parameters": [
+                            "FlipEffectSpeed"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "FlippableCapability::FlippableBehavior::FlipX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Flippable",
+                            "no"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Tween::TweenBehavior::AddObjectWidthTween2"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Tween",
+                            "\"toleft\"",
+                            "originalWidth",
+                            "\"linear\"",
+                            "FlipEffectSpeed",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosX"
+                          },
+                          "parameters": [
+                            "Object",
+                            ">",
+                            "CursorX()"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Tween::TweenBehavior::AddObjectWidthTween2"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Tween",
+                            "\"toleft\"",
+                            "Object.Width()/2",
+                            "\"linear\"",
+                            "FlipEffectSpeed",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Wait"
+                          },
+                          "parameters": [
+                            "FlipEffectSpeed"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "FlippableCapability::FlippableBehavior::FlipX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Flippable",
+                            "yes"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Tween::TweenBehavior::AddObjectWidthTween2"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Tween",
+                            "\"toleft\"",
+                            "originalWidth",
+                            "\"linear\"",
+                            "FlipEffectSpeed",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "FlippingEffect",
+                        "False",
+                        "<"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "<",
+                            "CursorX()"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "FlippableCapability::FlippableBehavior::FlipX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Flippable",
+                            "no"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosX"
+                          },
+                          "parameters": [
+                            "Object",
+                            ">",
+                            "CursorX()"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "FlippableCapability::FlippableBehavior::FlipX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Flippable",
+                            "yes"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "IsYourCharacterLooksRight",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "FlippingEffect",
+                        "True",
+                        "<"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "originalWidth",
+                            "=",
+                            "Object.Width()"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosX"
+                          },
+                          "parameters": [
+                            "Object",
+                            ">",
+                            "CursorX()"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Tween::TweenBehavior::AddObjectWidthTween2"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Tween",
+                            "\"toright\"",
+                            "Object.Width()/2",
+                            "\"linear\"",
+                            "0.2",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Wait"
+                          },
+                          "parameters": [
+                            "0.2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "FlippableCapability::FlippableBehavior::FlipX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Flippable",
+                            "no"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Tween::TweenBehavior::AddObjectWidthTween2"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Tween",
+                            "\"toleft\"",
+                            "originalWidth",
+                            "\"linear\"",
+                            "0.2",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "<",
+                            "CursorX()"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Tween::TweenBehavior::AddObjectWidthTween2"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Tween",
+                            "\"toleft\"",
+                            "Object.Width()/2",
+                            "\"linear\"",
+                            "0.2",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Wait"
+                          },
+                          "parameters": [
+                            "0.2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "FlippableCapability::FlippableBehavior::FlipX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Flippable",
+                            "yes"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Tween::TweenBehavior::AddObjectWidthTween2"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Tween",
+                            "\"toleft\"",
+                            "originalWidth",
+                            "\"linear\"",
+                            "0.2",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "FlippingEffect",
+                        "False",
+                        "<"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosX"
+                          },
+                          "parameters": [
+                            "Object",
+                            ">",
+                            "CursorX()"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "FlippableCapability::FlippableBehavior::FlipX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Flippable",
+                            "no"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "<",
+                            "CursorX()"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "FlippableCapability::FlippableBehavior::FlipX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Flippable",
+                            "yes"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Will be added later will use tween X scale"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "FlippingEffect",
+                        "True",
+                        "<"
+                      ]
+                    }
+                  ],
+                  "actions": []
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "FaceCursor::FaceCursor",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsFunctionsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "functionName": "doStepPreEvents"
+          }
+        ]
+      },
+      "propertyDescriptors": [
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "If you draw your character to look left you should decheck this option.",
+          "name": "IsYourCharacterLooksRight"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "Creates an effect for turn.",
+          "name": "FlippingEffect"
+        },
+        {
+          "value": "",
+          "type": "Behavior",
+          "label": "Tween",
+          "extraInformation": [
+            "Tween::TweenBehavior"
+          ],
+          "choices": [],
+          "name": "Tween"
+        },
+        {
+          "value": "0.2",
+          "type": "Number",
+          "label": "",
+          "name": "FlipEffectSpeed"
+        }
+      ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "FlipEffectSpeed"
+          },
+          {
+            "propertyName": "Tween"
+          },
+          {
+            "propertyName": "FlippingEffect"
+          },
+          {
+            "propertyName": "IsYourCharacterLooksRight"
+          }
+        ]
+      }
+    }
+  ],
+  "eventsBasedObjects": []
+}
